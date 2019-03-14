@@ -25,6 +25,7 @@
   "files": [
     "es",
     "src",
+    "hoc-utils.js",
     "index.js",
     "initContentful.js",
     "withContentful.js"
