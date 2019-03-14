@@ -1,0 +1,107 @@
+{
+  "name": "next-contentful",
+  "version": "0.1.0",
+  "description": "React library for integrating react-contentful into the server-side rendering of your Next.js app.",
+  "repository": "ryanhefner/next-contentful",
+  "keywords": [
+    "react",
+    "next",
+    "contentful",
+    "react-contentful",
+    "react-hoc",
+    "server-side rendering",
+    "ssr",
+    "rendering",
+    "server-side",
+    "nextjs",
+    "reactjs"
+  ],
+  "author": "Ryan Hefner <hi@ryanhefner.com> (https://www.ryanhefner.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryanhefner/next-contentful/issues"
+  },
+  "homepage": "https://github.com/ryanhefner/next-contentful#readme",
+  "files": [
+    "es",
+    "src",
+    "index.js",
+    "initContentful.js",
+    "withContentful.js"
+  ],
+  "directories": {
+    "lib": "/src"
+  },
+  "main": "index.js",
+  "module": "es/index.js",
+  "jsnext:main": "src/index.js",
+  "scripts": {
+    "clean": "rm -f index.js && rm -rf es && rm -rf umd",
+    "prebuild": "npm run clean",
+    "build": "node ./tools/build.js",
+    "watch": "babel ./src -d . --ignore __mocks__,__tests__,**/*.test.js --watch",
+    "prepare": "npm run build",
+    "prepublishOnly": "node ./tools/build.js",
+    "push-release": "git push origin master && git push --tags",
+    "test": "jest --findRelatedTests src/index.js"
+  },
+  "peerDependencies": {
+    "next": "^8.0.1",
+    "react": "^16.4.0-0",
+    "react-dom": "^16.4.0-0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.3.1",
+    "hoist-non-react-statics": "^3.3.0",
+    "prop-types": "^15.6.2",
+    "react-contentful": "^1.0.0",
+    "warning": "^4.0.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-dev-expression": "^0.2.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "babel-polyfill": "^6.26.0",
+    "coveralls": "^3.0.2",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "greenkeeper-lockfile": "^1.15.1",
+    "gzip-size": "^5.0.0",
+    "jest": "^23.6.0",
+    "jest-enzyme": "^7.0.1",
+    "jsdom": "^13.2.0",
+    "next": "^8.0.3",
+    "pretty-bytes": "^5.1.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-test-renderer": "^16.8.1",
+    "regenerator-runtime": "^0.13.1",
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-uglify": "^6.0.2",
+    "rollup-watch": "^4.3.1"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.test.js"
+    ],
+    "setupFiles": [
+      "<rootDir>/tools/jest-setup.js"
+    ],
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+    "testURL": "http://localhost"
+  }
+}
