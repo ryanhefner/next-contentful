@@ -53,10 +53,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.3.1",
-    "hoist-non-react-statics": "^3.3.0",
     "prop-types": "^15.6.2",
-    "react-contentful": "^1.0.0",
-    "warning": "^4.0.3"
+    "react-contentful": "^1.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
