@@ -17,11 +17,60 @@ yarn add next-contentful
 
 ## How to use
 
-_Coming soon_
+To use `next-contentful`, just set the parameters that will be used by the
+`ContentfulClient` from `react-contentful` and wraps your Next.js app in
+a `ContentfulProvider` and handles initiating both the `ContentfulClient` for
+both SSR/requests and the browser client.
 
-## Examples
+Any `Query` instance that appear in your React tree will be queued and requested
+server-side and included in the initial state to make reduce the requests being
+made by the client and results in your Next/React app rendering faster client-side.
 
-_Coming soon_
+Here’s an example of how it is used:
+
+```js
+import App, { Container } from 'next/app';
+import React from 'react';
+import { withContentful } from 'next-contentful';
+
+// Contentful config properties
+const accessToken = '[CONTENTFUL ACCESS TOKEN]';
+const host = 'cdn.contentful.com';
+const space = '[CONTENTFUL SPACE]';
+
+class MyApp extends App {
+  static async getInitialProps({ Component, ctx, router }) {
+    let pageProps = {};
+
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps({ ctx });
+    }
+
+    return { pageProps };
+  }
+
+  render() {
+    const {
+      Component,
+      pageProps,
+      store,
+    } = this.props;
+
+    return (
+      <Container>
+        <Component {...pageProps} />
+      </Container>
+    );
+  }
+}
+
+export default withContentful({
+  accessToken,
+  host,
+  space,
+})(MyApp);
+
+```
 
 ## License
 
