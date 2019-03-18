@@ -18,9 +18,9 @@ yarn add next-contentful
 ## How to use
 
 To use `next-contentful`, just set the parameters that will be used by the
-`ContentfulClient` from `react-contentful` and wraps your Next.js app in
-a `ContentfulProvider` and handles initiating both the `ContentfulClient` for
-both SSR/requests and the browser client.
+`ContentfulClient` from [`react-contentful`](https://github.com/ryanhefner/react-contentful)
+and wraps your Next.js app in a `ContentfulProvider` and handles initiating both
+the `ContentfulClient` for both SSR/requests and the browser client.
 
 Any `Query` instance that appear in your React tree will be queued and requested
 server-side and included in the initial state to make reduce the requests being
