@@ -1,5 +1,8 @@
 # Next Contentful
 
+[![npm version](https://badge.fury.io/js/next-contentful.svg)](https://badge.fury.io/js/next-contentful)
+[![npm](https://img.shields.io/npm/l/express.svg)](LICENSE)
+
 React library for integrating react-contentful into the server-side rendering of
 your Next.js app.
 
