@@ -54,7 +54,7 @@
   "dependencies": {
     "@babel/runtime": "^7.4.2",
     "prop-types": "^15.6.2",
-    "react-contentful": "^1.0.6"
+    "react-contentful": "^1.0.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -79,11 +79,11 @@
     "jsdom": "^14.0.0",
     "next": "^8.0.3",
     "pretty-bytes": "^5.1.0",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-test-renderer": "^16.8.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6",
     "regenerator-runtime": "^0.13.2",
-    "rollup": "^1.7.3",
+    "rollup": "^1.7.4",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.2.2",
     "rollup-plugin-json": "^4.0.0",
