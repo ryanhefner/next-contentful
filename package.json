@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.4.3",
+    "flatted": "^2.0.0",
     "prop-types": "^15.6.2",
     "react-contentful": "^1.0.8"
   },
