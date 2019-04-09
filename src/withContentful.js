@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { ContentfulProvider, getDataFromTree } from 'react-contentful';
 import { getDisplayName } from './hoc-utils';
 import initContentful from './initContentful';
+const Flatted = require('flatted/cjs');
 
 export default ({ accessToken, host, space }) => {
   return (ComposedComponent) => {
@@ -72,7 +73,7 @@ export default ({ accessToken, host, space }) => {
           accessToken,
           host,
           space,
-          cache: JSON.stringify(contentful.cache.extract()),
+          cache: Flatted.stringify(contentful.cache.extract()),
         };
 
         return {
