@@ -55,7 +55,7 @@
     "@babel/runtime": "^7.4.3",
     "flatted": "^2.0.0",
     "prop-types": "^15.6.2",
-    "react-contentful": "^1.1.0-beta.0"
+    "react-contentful": "^1.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
