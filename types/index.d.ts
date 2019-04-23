@@ -1,9 +1,26 @@
 // TypeScript Version: 3.0
 
-import * as initContentful from './initContentful';
-import * as withContentful from './withContentful';
+import { Component } from 'react';
+import { ContentfulClientInterface } from 'react-contentful';
 
-export {
-  initContentful,
-  withContentful,
-};
+/**
+ * initContentful
+ */
+
+export interface initContentfulParams {
+  initialState: any;
+}
+
+export function initContentful(params: initContentfulParams): ContentfulClientInterface;
+
+/**
+ * withContentful
+ */
+
+export interface withContentfulParams {
+  accessToken: string;
+  host: string;
+  space: string;
+}
+
+export function withContentful(params: withContentfulParams): Component;
