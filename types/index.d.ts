@@ -23,4 +23,4 @@ export interface withContentfulParams {
   space: string;
 }
 
-export function withContentful(params: withContentfulParams): Component;
+export type withContentful = (params: withContentfulParams) => Component;
