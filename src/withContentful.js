@@ -39,6 +39,7 @@ export default ({ accessToken, host, space }) => {
           accessToken,
           host,
           space,
+          environment,
         });
 
         if (!process.browser) {
@@ -73,6 +74,7 @@ export default ({ accessToken, host, space }) => {
           accessToken,
           host,
           space,
+          environment,
           cache: Flatted.stringify(contentful.cache.extract()),
         };
 
