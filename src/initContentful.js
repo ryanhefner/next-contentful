@@ -7,11 +7,13 @@ function create({
   cache,
   host,
   space,
+  environment,
 }) {
   return new ContentfulClient({
     host,
     accessToken,
     space,
+    environment,
     ssrMode: !!(process.browser) === false,
     cache: cache instanceof ContentfulCache
       ? cache
