@@ -7,7 +7,7 @@ function create({
   cache,
   host,
   space,
-  environment,
+  environment = 'master',
 }) {
   return new ContentfulClient({
     host,
