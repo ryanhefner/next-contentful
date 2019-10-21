@@ -21,6 +21,7 @@ export interface withContentfulParams {
   accessToken: string;
   host: string;
   space: string;
+  environment?: string;
 }
 
 export type withContentful = (params: withContentfulParams) => Component;
