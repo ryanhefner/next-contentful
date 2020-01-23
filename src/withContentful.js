@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import { ContentfulProvider, getDataFromTree } from 'react-contentful';
-import { getDisplayName } from './hoc-utils';
+import { getDataFromTree } from 'next-utils';
+import { ContentfulProvider } from 'react-contentful';
+import { getDisplayName } from 'react-hoc-helpers';
+
 import initContentful from './initContentful';
+
 const Flatted = require('flatted/cjs');
 
-export default ({ accessToken, host, space, environment }) => {
+export default ({ accessToken, host, space, environment, locale }) => {
   return (ComposedComponent) => {
     const propTypes = {
       contentfulState: PropTypes.shape(),
@@ -86,7 +89,7 @@ export default ({ accessToken, host, space, environment }) => {
 
       render() {
         return (
-          <ContentfulProvider client={this.contentfulClient}>
+          <ContentfulProvider client={this.contentfulClient} locale={locale}>
             <ComposedComponent {...this.props} />
           </ContentfulProvider>
         );
