@@ -6,7 +6,7 @@ import { getDisplayName } from './hoc-utils';
 import initContentful from './initContentful';
 const Flatted = require('flatted/cjs');
 
-export default ({ accessToken, host, space }) => {
+export default ({ accessToken, host, space, environment }) => {
   return (ComposedComponent) => {
     const propTypes = {
       contentfulState: PropTypes.shape(),
@@ -39,6 +39,7 @@ export default ({ accessToken, host, space }) => {
           accessToken,
           host,
           space,
+          environment,
         });
 
         if (!process.browser) {
@@ -73,6 +74,7 @@ export default ({ accessToken, host, space }) => {
           accessToken,
           host,
           space,
+          environment,
           cache: Flatted.stringify(contentful.cache.extract()),
         };
 
