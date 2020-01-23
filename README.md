@@ -1,10 +1,11 @@
 # Next Contentful
 
-[![npm version](https://badge.fury.io/js/next-contentful.svg)](https://badge.fury.io/js/next-contentful)
-[![npm](https://img.shields.io/npm/l/express.svg)](LICENSE)
+[![npm](https://img.shields.io/npm/v/next-contentful?style=flat-square)](https://www.npmjs.com/package/next-contentful)
+[![NPM](https://img.shields.io/npm/l/next-contentful?style=flat-square)](LICENSE)
+[![npm](https://img.shields.io/npm/dt/next-contentful?style=flat-square)](https://www.npmjs.com/package/next-contentful)
 
-React library for integrating react-contentful into the server-side rendering of
-your Next.js app.
+React library for integrating [`react-contentful`](https://github.com/ryanhefner/react-contentful)
+into the server-side rendering of your Next.js app.
 
 ## Install
 
@@ -37,9 +38,10 @@ import React from 'react';
 import { withContentful } from 'next-contentful';
 
 // Contentful config properties
+const space = '[CONTENTFUL SPACE]';
 const accessToken = '[CONTENTFUL ACCESS TOKEN]';
 const host = 'cdn.contentful.com';
-const space = '[CONTENTFUL SPACE]';
+const locale = 'es-US';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx, router }) {
@@ -68,12 +70,29 @@ class MyApp extends App {
 }
 
 export default withContentful({
-  accessToken,
-  host,
   space,
+  accessToken,
+  host,         // Optional: Defaults to 'cdn.contentful.com'
+  locale,       // Optional: Defaults to `en-US`
 })(MyApp);
 
 ```
+
+### `withContentful`
+
+Higher-order component that makes it easy to quickly add Contentful support to your Next.js application by providing the setup to that allows [`react-contentful`](https://github.com/ryanhefner/react-contentful) components to be rendered both server-side and client-side within your React applications.
+
+#### Options
+
+* `space: string` - ID of the Contentful space you are working with
+
+* `accessToken: string` - Contentful access token used to access the space
+
+* `locale: string` - Default locale to apply to queries (Note: This can be overriden with locales set on the individual queries).
+
+* `host: string` - Host to use for the Contentful requests. Defaults to `cdn.contentful.com`, but could be set to `preview.contentful.com` when used with a preview token.
+
+* `environment: string` – Environment value to use for Contentful requests. Defaults to `master`.
 
 ## License
 
