@@ -49,7 +49,7 @@ export default ({ accessToken, host, space, environment, locale }) => {
           try {
             // Run all Contentful queries
             await getDataFromTree(
-              <ContentfulProvider client={contentful}>
+              <ContentfulProvider client={contentful} locale={locale}>
                 <ComposedComponent
                   Component={Component}
                   ctx={ctx}
