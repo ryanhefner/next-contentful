@@ -24,4 +24,4 @@ export interface withContentfulParams {
   environment?: string;
 }
 
-export type withContentful = (params: withContentfulParams) => Component;
+export function withContentful(params: withContentfulParams): (app: any) => Component;
