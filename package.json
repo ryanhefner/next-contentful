@@ -58,6 +58,7 @@
     "@babel/runtime": "^7.8.3",
     "@types/react": "^16.9.19",
     "flatted": "^2.0.1",
+    "next-utils": "^0.1.3",
     "prop-types": "^15.6.2",
     "react-contentful": "^1.5.0",
     "react-hoc-helpers": "^0.1.3"
