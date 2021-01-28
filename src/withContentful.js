@@ -4,12 +4,11 @@ import Head from 'next/head';
 import { getDataFromTree } from 'next-utils';
 import { ContentfulProvider } from 'react-contentful';
 import { getDisplayName } from 'react-hoc-helpers';
+import { stringify } from 'flatted';
 
 import initContentful from './initContentful';
 
-const Flatted = require('flatted/cjs');
-
-export default ({ accessToken, host, space, environment, locale }) => {
+export default function withContentful({ accessToken, host, space, environment, locale }) {
   return (ComposedComponent) => {
     const propTypes = {
       contentfulState: PropTypes.shape(),
@@ -78,7 +77,7 @@ export default ({ accessToken, host, space, environment, locale }) => {
           host,
           space,
           environment,
-          cache: Flatted.stringify(contentful.cache.extract()),
+          cache: stringify(contentful.cache.extract()),
         };
 
         return {
