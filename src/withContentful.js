@@ -9,7 +9,7 @@ import initContentful from './initContentful';
 
 const Flatted = require('flatted/cjs');
 
-export default ({ accessToken, host, space, environment, locale }) => {
+export default withContentful = ({ accessToken, host, space, environment, locale }) => {
   return (ComposedComponent) => {
     const propTypes = {
       contentfulState: PropTypes.shape(),
